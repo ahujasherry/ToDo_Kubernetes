@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-prod
+  template:
+    metadata:
+      labels:
+        app: mongodb-prod
+    spec:    
+      containers:
+      - name: mongodb-prod
+        image: mongo
+        ports:
+        - containerPort: 27017
+        # Additional settings for MongoDB configuration
+        # Uncomment and modify the following lines as needed:
+
+        # Volume mounts for persistent storage
+        volumeMounts:
+        - name: mongodb-data
+          mountPath: /data/db
+
+        # Environment variables for authentication
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: admin
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: admin
+
+      # PersistentVolumeClaim to persist data across pod restarts
+      volumes:
+      - name: mongodb-data
+        persistentVolumeClaim:
+          claimName: mongodb-data-pvc
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - typescript-app-prod
+            topologyKey: "kubernetes.io/hostname"
+
+# PersistentVolumeClaim for MongoDB data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-data-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  

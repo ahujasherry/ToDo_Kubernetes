@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typescript-app-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: typescript-app-prod
+  template:
+    metadata:
+      labels:
+        app: typescript-app-prod
+    spec:
+      containers:
+      - name: typescript-app-prod
+        image: us-central1-docker.pkg.dev/smart-processor-412022/typescriptto-repository/typescript-app-prod:v1
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always

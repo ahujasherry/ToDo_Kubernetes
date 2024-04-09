@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typescript-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: typescript-app
+  template:
+    metadata:
+      labels:
+        app: typescript-app
+    spec:
+      containers:
+      - name: typescript-app
+        image: us-central1-docker.pkg.dev/to-do-418823/typescriptto-repository/typescript-app:v1
+        ports:
+        - containerPort: 3000
