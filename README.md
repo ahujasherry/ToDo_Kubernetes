@@ -27,7 +27,7 @@ npm build
 npm start
 ```
 
-
+Full Tech Report can be found at Root directory file named Report.pdf
 
 ![Screenshot 2024-05-21 150623](https://github.com/ahujasherry/ToDo_Kubernetes/assets/72737856/66c049ad-5d57-4d13-bf19-7b5fa4b29621)
 
