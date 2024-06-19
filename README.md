@@ -2,7 +2,7 @@
 Successfully built a comprehensive cloud computing project of To Do List with Kubernetes and google cloud platform(GCP) . The project involved deploying a web application with a database backend on Google Cloud Platform (GCP) using Kubernetes. Below are the key achievements and features of this project:
 
 ## Project Description 📝
-This project is a To-Do List Web Application that allows users to manage their tasks effectively. Users can create, update, edit, and delete to-do items, making it easy to keep track of daily activities and tasks.
+This project is a To-Do List Web Application that allows users to manage their tasks effectively. Users can create, update, edit, and delete to-do items, making it easy to keep track of daily activities and tasks. The primary objective was not the complexity of application but learn and master the cloud and dev ops aspects involved.
 
 ![](docs/screenshot.png)
 
