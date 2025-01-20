@@ -4,7 +4,7 @@ Successfully built a comprehensive cloud computing project of To Do List with Ku
 ## Project Description 📝
 This project is a To-Do List Web Application that allows users to manage their tasks effectively. Users can create, update, edit, and delete to-do items, making it easy to keep track of daily activities and tasks. The primary objective was not the complexity of application but learn and master the cloud and dev ops aspects involved.
 
-![](docs/screenshot.png)
+![](docs/screenshot1.png)
 
 
 ## Key Features 🚀
